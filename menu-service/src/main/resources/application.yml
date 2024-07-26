@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: menuservice
+  config:
+    import: optional:configserver:http://localhost:8888
+
+
+
+#server:
+#  port: 2038
+#
+#spring:
+#  application:
+#    name: menuservice
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/ustemp
+#    username: root
+#    password: pass@word1
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#      show-sql: true

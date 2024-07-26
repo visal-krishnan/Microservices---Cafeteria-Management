@@ -1,0 +1,30 @@
+eureka:
+  client:
+    register-with-eureka: false
+server:
+  port: 8222
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: menuservice
+          uri: http://localhost:2238
+          predicates:
+            - Path=/menu/**
+        - id: userservice
+          uri: http://localhost:2239
+          predicates:
+            - Path=/users/**
+        - id: orderservice
+          uri: http://localhost:2240
+          predicates:
+            - Path=/orders/**
+        - id: paymentservice
+          uri: http://localhost:2241
+          predicates:
+            - Path=/payments/**
